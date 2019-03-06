@@ -6,7 +6,7 @@ A Weak Concurrent Hash Map Solution which stores the keys and values only for a 
   <pre>
   
   // Create a Map Object
-  long expiryInMillis = 1  60  1000;	// 1 minute
+  long expiryInMillis = 1 * 60 * 1000;	// 1 minute
   WeakConcurrentHashMap&lt;String, Object&gt; map = new WeakConcurrentHashMap&lt;String, Object&gt;(expiryInMillis);
   
   // Use it
