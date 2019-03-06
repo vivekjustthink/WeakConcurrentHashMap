@@ -6,13 +6,11 @@ import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
 import javax.ws.rs.ext.Provider;
 
-import com.webnms.iot.portal.crm.WeakConcurrentHashMap;
-import com.webnms.iot.portal.crm.WeakConcurrentHashMapListener;
-import com.webnms.rest.logger.RestLogger;
+import WeakConcurrentHashMap;
+import WeakConcurrentHashMapListener;
 
 /**
  * This servlet filter is used to track the number of api hits module wise on the FE Side. For now it just prints the api hit count once in 5 mintues in the FE logs. 
- * If required to get a consolidated api count on server side move the api counter and its listener to BE server and send the api hit information to BE.
  * 
  * @author Vivekananthan M
  *
@@ -59,6 +57,6 @@ class PrintAPIHits implements WeakConcurrentHashMapListener<String, Long> {
 
 	@Override
 	public void notifyOnRemoval(String key, Long value) {
-		RestLogger.info("Refreshing API Hits " + key + " : " + value);
+		System.out.println("Refreshing API Hits " + key + " : " + value);
 	}
 }
