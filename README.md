@@ -24,5 +24,24 @@ A Weak Concurrent Hash Map Solution which stores the keys and values only for a 
   	// Your operations on map
   }
   </pre>
+
+
+Listener Implementation
+
+
+ <pre>
+class MyMapListener implements WeakConcurrentHashMapListener<String, Long> {
+
+	@Override
+	public void notifyOnAdd(String key, Long value) {
+		System.out.println("New key added to map. Key : " + key + ", Value : " + value);
+	}
+
+	@Override
+	public void notifyOnRemoval(String key, Long value) {
+		RestLogger.info("Key Removed from Map Key: " + key + ", Value : " + value);
+	}
+}
+</pre>
   
   @author Vivekananthan M (vivekjustthink@gmail.com)
