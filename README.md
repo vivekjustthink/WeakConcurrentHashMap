@@ -7,11 +7,11 @@ A Weak Concurrent Hash Map Solution which stores the keys and values only for a 
   
   // Create a Map Object
   long expiryInMillis = 1 * 60 * 1000;	// 1 minute
-  WeakConcurrentHashMap&lt;String, Object&gt; map = new WeakConcurrentHashMap&lt;String, Object&gt;(expiryInMillis);
+  WeakConcurrentHashMap&lt;String, Long&gt; map = new WeakConcurrentHashMap&lt;String, Long&gt;(expiryInMillis);
   
   // Use it
   map.put(&quot;key&quot;, valueObject);
-  Object valueObject = map.get(&quot;key&quot;);
+  Long valueObject = map.get(&quot;key&quot;);
   
   // quit using it
   map.quitMap();
