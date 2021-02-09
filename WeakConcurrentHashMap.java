@@ -1,5 +1,3 @@
-package com.webnms.iot.portal.crm;
-
 import java.util.Date;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
